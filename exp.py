@@ -22,10 +22,11 @@ def sample():
 				odd = not odd
 
 
-hi = 4
+hi = 3
 T = 10000
 S = [sample() for i in range(T)]
 X = np.linspace(0, hi, 100)
-plt.hist(S, 20, range=[0, hi], density=True, fill=False, color='k')
-plt.plot(X, [math.exp(-x) for x in X], '-k')
-plt.show()
+plt.hist(S, 20, range=(0, hi), density=True, fill=False, color='k')
+plt.plot(X, [math.exp(-x) for x in X], '-k', label="exp(-x)")
+plt.legend()
+plt.savefig("exp.svg")
